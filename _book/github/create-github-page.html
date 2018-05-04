@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>node+multer上传图片 · ismumu's blog</title>
+        <title>创建github page · ismumu's blog</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,8 +53,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
-    
-    <link rel="next" href="echarts-graph.html" />
     
     
 
@@ -129,9 +127,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="node-multer.html">
+        <li class="chapter " data-level="1.2.1" data-path="../javascript/node-multer.html">
             
-                <a href="node-multer.html">
+                <a href="../javascript/node-multer.html">
             
                     
                     node+multer上传图片
@@ -142,9 +140,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="echarts-graph.html">
+        <li class="chapter " data-level="1.2.2" data-path="../javascript/echarts-graph.html">
             
-                <a href="echarts-graph.html">
+                <a href="../javascript/echarts-graph.html">
             
                     
                     echarts-graph
@@ -155,9 +153,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="different-time-zones.html">
+        <li class="chapter " data-level="1.2.3" data-path="../javascript/different-time-zones.html">
             
-                <a href="different-time-zones.html">
+                <a href="../javascript/different-time-zones.html">
             
                     
                     new Date 不同时区的转换
@@ -187,9 +185,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../github/create-github-page.html">
+        <li class="chapter active" data-level="1.3.1" data-path="create-github-page.html">
             
-                <a href="../github/create-github-page.html">
+                <a href="create-github-page.html">
             
                     
                     创建github page
@@ -376,7 +374,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >node+multer上传图片</a>
+        <a href=".." >创建github page</a>
     </h1>
 </div>
 
@@ -391,63 +389,24 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="node--express--multer&#x4E0A;&#x4F20;&#x56FE;&#x7247;">node + express + multer&#x4E0A;&#x4F20;&#x56FE;&#x7247;</h1>
-<h2 id="&#x4E00;&#x3001;&#x670D;&#x52A1;&#x7AEF;&#x914D;&#x7F6E;">&#x4E00;&#x3001;&#x670D;&#x52A1;&#x7AEF;&#x914D;&#x7F6E;</h2>
-<p>&#x5728;express&#x751F;&#x6210;&#x5668;&#x751F;&#x6210;&#x7684;&#x9879;&#x76EE;&#x91CC;&#x627E;&#x5230;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7684;app.js&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x4EE5;&#x4E0B;&#x4FEE;&#x6539;</p>
-<p>1.&#x5F15;&#x5165;&#x5B89;&#x88C5;&#x4F9D;&#x8D56;</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>)
-<span class="hljs-keyword">var</span> multer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;multer&apos;</span>)
-<span class="hljs-keyword">var</span> upload = multer({ dest: <span class="hljs-string">&apos;uploads/&apos;</span> })
+                                <h1 id="&#x521B;&#x5EFA;github-page">&#x521B;&#x5EFA;github page</h1>
+<h3 id="1&#x9009;&#x62E9;&#x81EA;&#x5DF1;&#x7684;&#x4E00;&#x4E2A;github&#x9879;&#x76EE;">1.&#x9009;&#x62E9;&#x81EA;&#x5DF1;&#x7684;&#x4E00;&#x4E2A;github&#x9879;&#x76EE;</h3>
+<p>&#x9879;&#x76EE;&#x4E2D;&#x5305;&#x542B;&#x5DF2;&#x7ECF;&#x6253;&#x5305;&#x597D;&#x7684;build&#x6216;&#x8005;dist&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#xFF08;&#x7EAF;&#x9759;&#x6001;html&#x7F51;&#x7AD9;&#xFF0C;github&#x6682;&#x4E0D;&#x652F;&#x6301;&#x7C7B;&#x4F3C;React,vue&#x7684;&#x5355;&#x9875;&#x9762;&#xFF09;</p>
+<h3 id="2&#x5B89;&#x88C5;gh-pages&#x5305;">2.&#x5B89;&#x88C5;gh-pages&#x5305;</h3>
+<pre><code class="lang-js">npm install gh-pages --save
 </code></pre>
-<p>2.&#x6DFB;&#x52A0;&#x4E0A;&#x4F20;&#x56FE;&#x7247;&#x7684;&#x8DEF;&#x7531;</p>
-<pre><code class="lang-js"><span class="hljs-comment">// &#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;</span>
-app.post(<span class="hljs-string">&apos;/upload-multiple&apos;</span>, upload.array(<span class="hljs-string">&apos;myfile&apos;</span>, <span class="hljs-number">2</span>), <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res, next</span>) </span>{
-
-    <span class="hljs-comment">// &#x4E0A;&#x4F20;&#x7684;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x6570;&#x7EC4;&#x7C7B;&#x578B;</span>
-    <span class="hljs-keyword">let</span> files = req.files;
-
-    files.map((obj, i) =&gt; {
-        <span class="hljs-keyword">let</span> suffix = obj.originalname.split(<span class="hljs-string">&apos;.&apos;</span>)[<span class="hljs-number">1</span>];
-        fs.renameSync(obj.path, obj.path + <span class="hljs-string">&apos;.&apos;</span> + suffix);
-    })
-
-    res.send(<span class="hljs-string">&quot;done&quot;</span>);
-})
-
-<span class="hljs-comment">// &#x5355;&#x4E2A;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;</span>
-app.post(<span class="hljs-string">&apos;/upload&apos;</span>, upload.single(<span class="hljs-string">&apos;logo&apos;</span>), <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res, next</span>) </span>{
-
-    <span class="hljs-comment">// &#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;&#x4FE1;&#x606F;</span>
-    <span class="hljs-keyword">let</span> file = req.file;
-
-    <span class="hljs-comment">// &#x56FE;&#x7247;&#x540E;&#x7F00;</span>
-    <span class="hljs-keyword">let</span> suffix = file.originalname.split(<span class="hljs-string">&apos;.&apos;</span>)[<span class="hljs-number">1</span>];
-
-    fs.renameSync(file.path, file.path + <span class="hljs-string">&apos;.&apos;</span> + suffix);
-
-    res.send(<span class="hljs-string">&apos;done&apos;</span>);
-
-});
+<h3 id="3&#x5728;packagejson-&#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;">3.&#x5728;package.json &#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;</h3>
+<pre><code class="lang-js"><span class="hljs-string">&quot;predeploy&quot;</span>: <span class="hljs-string">&quot;npm run build&quot;</span>, <span class="hljs-comment">// &#x6253;&#x5305;&#x547D;&#x4EE4;</span>
+<span class="hljs-string">&quot;deploy&quot;</span>: <span class="hljs-string">&quot;gh-pages -d dist&quot;</span> <span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5206;&#x652F;&#x540D;&#x5B57;&#x53EB;gh-pages&#xFF0C;&#x5185;&#x5BB9;&#x662F;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7684;dist&#x6587;&#x4EF6;&#x5939;&#x5185;&#x5BB9;</span>
 </code></pre>
-<h2 id="&#x4E8C;&#x3001;&#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;">&#x4E8C;&#x3001;&#x5BA2;&#x6237;&#x7AEF;&#x914D;&#x7F6E;</h2>
-<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;html&#x5E76;&#x4E14;&#x5199;&#x5165;&#xFF1A;</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">enctype</span>=<span class="hljs-string">&quot;multipart/form-data&quot;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;/upload&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;logo&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&#x63D0;&#x4EA4;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
-
-
-<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">enctype</span>=<span class="hljs-string">&quot;multipart/form-data&quot;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;/upload-multiple&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;myfile&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;myfile&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&#x63D0;&#x4EA4;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<h3 id="4&#x6267;&#x884C;">4.&#x6267;&#x884C;</h3>
+<pre><code class="lang-js">npm run deploy
 </code></pre>
-<h2 id="123123">123123</h2>
+<p>&#x6267;&#x884C; deploy &#x7684;&#x65F6;&#x5019;&#x4F1A;&#x5148;&#x6267;&#x884C; predeploy &#x547D;&#x4EE4;</p>
+<h3 id="5&#x8BBF;&#x95EE;&#x9875;&#x9762;">5.&#x8BBF;&#x95EE;&#x9875;&#x9762;</h3>
+<p>&#x5728;github&#x9879;&#x76EE;&#x4E2D;&#x627E;&#x5230;Settings&#x9009;&#x9879;&#x5361;&#xFF0C;&#x62C9;&#x5230;&#x4E0B;&#x9762;&#x4F1A;&#x770B;&#x5230;GitHub Pages&#xFF0C;&#x57DF;&#x540D;&#x5DF2;&#x7ECF;&#x5E2E;&#x4F60;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x597D;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x3002; </p>
 <footer class="page-footer"><span class="copyright"></span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2018-05-04 13:37:02
+2018-05-04 13:53:42
 </span></footer>
                                 
                                 </section>
@@ -476,10 +435,6 @@ app.post(<span class="hljs-string">&apos;/upload&apos;</span>, upload.single(<sp
             
                 
                 
-                <a href="echarts-graph.html" class="navigation navigation-next navigation-unique" aria-label="Next page: echarts-graph">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
             
         
     </div>
@@ -487,7 +442,7 @@ app.post(<span class="hljs-string">&apos;/upload&apos;</span>, upload.single(<sp
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"node+multer上传图片","level":"1.2.1","depth":2,"next":{"title":"echarts-graph","level":"1.2.2","depth":2,"path":"javascript/echarts-graph.md","ref":"javascript/echarts-graph.md","articles":[]},"previous":{"title":"Javascript","level":"1.2","depth":1,"ref":"","articles":[{"title":"node+multer上传图片","level":"1.2.1","depth":2,"path":"javascript/node-multer.md","ref":"javascript/node-multer.md","articles":[]},{"title":"echarts-graph","level":"1.2.2","depth":2,"path":"javascript/echarts-graph.md","ref":"javascript/echarts-graph.md","articles":[]},{"title":"new Date 不同时区的转换","level":"1.2.3","depth":2,"path":"javascript/different-time-zones.md","ref":"javascript/different-time-zones.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["favicon","tbfed-pagefooter@^0.0.1","livereload"],"styles":{"website":"public/css/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ismumu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ismumu's blog","links":{"sidebar":{"Ismumu's Home":"http://ismumu.com"}},"gitbook":"*","description":"aaaaaa"},"file":{"path":"javascript/node-multer.md","mtime":"2018-05-04T05:37:02.617Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-04T05:35:37.208Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"创建github page","level":"1.3.1","depth":2,"next":{"title":"Regex","level":"1.4","depth":1,"ref":"","articles":[{"title":"常用正则总结","level":"1.4.1","depth":2,"path":"regex/common.md","ref":"regex/common.md","articles":[]}]},"previous":{"title":"GitHub","level":"1.3","depth":1,"ref":"","articles":[{"title":"创建github page","level":"1.3.1","depth":2,"path":"github/create-github-page.md","ref":"github/create-github-page.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["favicon","tbfed-pagefooter@^0.0.1","livereload"],"styles":{"website":"public/css/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","qq","qzone"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ismumu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ismumu's blog","links":{"sidebar":{"Ismumu's Home":"http://ismumu.com"}},"gitbook":"*","description":"aaaaaa"},"file":{"path":"github/create-github-page.md","mtime":"2018-05-04T05:53:42.141Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-04T05:35:37.208Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
