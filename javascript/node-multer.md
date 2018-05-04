@@ -66,7 +66,3 @@ app.post('/upload', upload.single('logo'), function (req, res, next) {
     <input type="submit" value="提交"></input>
 </form>
 ```
-
-
-123123
-------
