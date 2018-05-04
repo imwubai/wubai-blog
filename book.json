@@ -1,0 +1,51 @@
+{
+    "title": "ismumu's blog",
+    "description": "aaaaaa",
+    "author": "ismumu",
+    "links": {
+        "sidebar" : {
+            "Ismumu's Home" : "http://ismumu.com"
+        }
+    },
+    "styles": {
+        "website": "public/css/common.css"
+    },
+    "plugins": [
+        "favicon",
+        "tbfed-pagefooter@^0.0.1"
+    ],
+    "pluginsConfig": {
+        "sharing": {
+            "douban": false,
+            "facebook": false,
+            "google": false,
+            "hatenaBookmark": false,
+            "instapaper": false,
+            "line": false,
+            "linkedin": false,
+            "messenger": false,
+            "pocket": false,
+            "qq": false,
+            "qzone": false,
+            "stumbleupon": false,
+            "twitter": false,
+            "viber": false,
+            "vk": false,
+            "weibo": false,
+            "whatsapp": false,
+            "all": [
+                "facebook", "google", "twitter",
+                "weibo", "instapaper", "linkedin",
+                "pocket", "stumbleupon", "qq", "qzone"
+            ]
+        },
+        "favicon": {
+            "shortcut": "favicon.ico",
+            "bookmark": "favicon.ico"
+        },
+        "tbfed-pagefooter": {
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        }
+    }
+}
