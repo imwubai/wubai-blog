@@ -46,3 +46,10 @@ Object.is(NaN, NaN) // true
 ##### 4. Object.assign()
 
 Object.assign拷贝的属性是有限制的，只拷贝源对象的自身属性（不拷贝继承属性），也不拷贝不可枚举的属性（enumerable: false）。
+
+##### 5. 解构赋值必须是最后一个参数，否则会报错。
+
+```js
+let { ...x, y, z } = obj; // 句法错误
+let { x, ...y, ...z } = obj; // 句法错误
+```
