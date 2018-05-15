@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>常用正则总结 · ismumu's blog</title>
+        <title>ES6 - 对象的扩展 · ismumu's blog</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,6 +53,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
+    
+    <link rel="next" href="promise.html" />
     
     
 
@@ -127,9 +129,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../javascript/object.html">
+        <li class="chapter active" data-level="1.2.1" data-path="object.html">
             
-                <a href="../javascript/object.html">
+                <a href="object.html">
             
                     
                     ES6 - 对象的扩展
@@ -140,9 +142,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="../javascript/promise.html">
+        <li class="chapter " data-level="1.2.2" data-path="promise.html">
             
-                <a href="../javascript/promise.html">
+                <a href="promise.html">
             
                     
                     ES6 - Promise 对象
@@ -153,9 +155,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="../javascript/node-multer.html">
+        <li class="chapter " data-level="1.2.3" data-path="node-multer.html">
             
-                <a href="../javascript/node-multer.html">
+                <a href="node-multer.html">
             
                     
                     node+multer上传图片
@@ -166,9 +168,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="../javascript/echarts-graph.html">
+        <li class="chapter " data-level="1.2.4" data-path="echarts-graph.html">
             
-                <a href="../javascript/echarts-graph.html">
+                <a href="echarts-graph.html">
             
                     
                     echarts-graph
@@ -179,9 +181,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="../javascript/different-time-zones.html">
+        <li class="chapter " data-level="1.2.5" data-path="different-time-zones.html">
             
-                <a href="../javascript/different-time-zones.html">
+                <a href="different-time-zones.html">
             
                     
                     new Date 不同时区的转换
@@ -243,9 +245,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.1" data-path="common.html">
+        <li class="chapter " data-level="1.4.1" data-path="../regex/common.html">
             
-                <a href="common.html">
+                <a href="../regex/common.html">
             
                     
                     常用正则总结
@@ -400,7 +402,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >常用正则总结</a>
+        <a href=".." >ES6 - 对象的扩展</a>
     </h1>
 </div>
 
@@ -415,35 +417,40 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5E38;&#x7528;&#x6B63;&#x5219;&#x603B;&#x7ED3;">&#x5E38;&#x7528;&#x6B63;&#x5219;&#x603B;&#x7ED3;</h1>
-<pre><code class="lang-js">
-<span class="hljs-comment">// &#x5339;&#x914D;&#x5141;&#x8BB8;0&#x7684;&#x6B63;&#x6574;&#x6570;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x5141;&#x8BB8;01&#xFF0C; 001&#x683C;&#x5F0F;</span>
-/^([<span class="hljs-number">1</span><span class="hljs-number">-9</span>]\d*|[<span class="hljs-number">0</span>]{<span class="hljs-number">1</span>,<span class="hljs-number">1</span>})$/
+                                <h1 id="&#x5BF9;&#x8C61;&#x7684;&#x6269;&#x5C55;">&#x5BF9;&#x8C61;&#x7684;&#x6269;&#x5C55;</h1>
+<h5 id="1-&#x5C5E;&#x6027;&#x540D;&#x8868;&#x8FBE;&#x5F0F;&#x4E0E;&#x7B80;&#x6D01;&#x8868;&#x793A;&#x6CD5;&#xFF0C;&#x4E0D;&#x80FD;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x4F1A;&#x62A5;&#x9519;&#x3002;">1. &#x5C5E;&#x6027;&#x540D;&#x8868;&#x8FBE;&#x5F0F;&#x4E0E;&#x7B80;&#x6D01;&#x8868;&#x793A;&#x6CD5;&#xFF0C;&#x4E0D;&#x80FD;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x4F1A;&#x62A5;&#x9519;&#x3002;</h5>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x62A5;&#x9519;</span>
+<span class="hljs-keyword">const</span> foo = <span class="hljs-string">&apos;bar&apos;</span>;
+<span class="hljs-keyword">const</span> bar = <span class="hljs-string">&apos;abc&apos;</span>;
+<span class="hljs-keyword">const</span> baz = { [foo] };
 
-<span class="hljs-comment">// &#x90AE;&#x7BB1;</span>
-/^[a-zA-Z0<span class="hljs-number">-9</span>_-]+@[a-zA-Z0<span class="hljs-number">-9</span>_-]+(\.[a-zA-Z0<span class="hljs-number">-9</span>_-]+)+$/
-<span class="hljs-regexp">/^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/</span>
-
-<span class="hljs-comment">// &#x5EA7;&#x673A;&#x53F7;&#x7801;</span>
-/^(([<span class="hljs-number">0</span>\+]\d{<span class="hljs-number">2</span>,<span class="hljs-number">3</span>}-)?(<span class="hljs-number">0</span>\d{<span class="hljs-number">2</span>,<span class="hljs-number">3</span>})-)(\d{<span class="hljs-number">7</span>,<span class="hljs-number">8</span>})(-(\d{<span class="hljs-number">3</span>,}))?$/
-
-<span class="hljs-comment">// &#x624B;&#x673A;&#x53F7;&#x7801;</span>
-/^<span class="hljs-number">13</span>[<span class="hljs-number">0</span><span class="hljs-number">-9</span>]{<span class="hljs-number">9</span>}$|<span class="hljs-number">14</span>[<span class="hljs-number">0</span><span class="hljs-number">-9</span>]{<span class="hljs-number">9</span>}|<span class="hljs-number">15</span>[<span class="hljs-number">0</span><span class="hljs-number">-9</span>]{<span class="hljs-number">9</span>}$|<span class="hljs-number">17</span>[<span class="hljs-number">0</span><span class="hljs-number">-9</span>]{<span class="hljs-number">9</span>}$|<span class="hljs-number">18</span>[<span class="hljs-number">0</span><span class="hljs-number">-9</span>]{<span class="hljs-number">9</span>}$/
-
-<span class="hljs-comment">// &#x56FE;&#x7247;&#x683C;&#x5F0F;</span>
-/\.(gif|jpg|jpeg|png|GIF|JPG|PNG)$/
-
-<span class="hljs-comment">// &#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;&#x7801;&#x9A8C;&#x8BC1;</span>
-/^(\d{<span class="hljs-number">15</span>}$|^\d{<span class="hljs-number">18</span>}$|^\d{<span class="hljs-number">17</span>}(\d|X|x))$/
-
-<span class="hljs-comment">// &#x9A8C;&#x8BC1;&#x91D1;&#x94B1;&#x683C;&#x5F0F;&#xFF0C;x or x.x or x.xx ,x&#x4E3A;&#x6570;&#x5B57;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;0&#x5F00;&#x5934;</span>
-/^(?=[\d.]{<span class="hljs-number">1</span>,<span class="hljs-number">15</span>})([<span class="hljs-number">1</span><span class="hljs-number">-9</span>]\d{<span class="hljs-number">1</span>,<span class="hljs-number">14</span>}|\d)([.][<span class="hljs-number">0</span><span class="hljs-number">-9</span>]{<span class="hljs-number">0</span>,<span class="hljs-number">2</span>})?$/
-
-<span class="hljs-comment">// 1-15&#x4F4D;&#x7684;&#x7EAF;&#x6570;&#x5B57;</span>
-/^\d{<span class="hljs-number">1</span>,<span class="hljs-number">15</span>}$/,
+<span class="hljs-comment">// &#x6B63;&#x786E;</span>
+<span class="hljs-keyword">const</span> foo = <span class="hljs-string">&apos;bar&apos;</span>;
+<span class="hljs-keyword">const</span> baz = { [foo]: <span class="hljs-string">&apos;abc&apos;</span>};
 </code></pre>
+<h5 id="2-&#x5C5E;&#x6027;&#x540D;&#x8868;&#x8FBE;&#x5F0F;&#x5982;&#x679C;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x81EA;&#x52A8;&#x5C06;&#x5BF9;&#x8C61;&#x8F6C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;object-object&#xFF0C;&#x8FD9;&#x4E00;&#x70B9;&#x8981;&#x7279;&#x522B;&#x5C0F;&#x5FC3;&#x3002;">2. &#x5C5E;&#x6027;&#x540D;&#x8868;&#x8FBE;&#x5F0F;&#x5982;&#x679C;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x81EA;&#x52A8;&#x5C06;&#x5BF9;&#x8C61;&#x8F6C;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;[object Object]&#xFF0C;&#x8FD9;&#x4E00;&#x70B9;&#x8981;&#x7279;&#x522B;&#x5C0F;&#x5FC3;&#x3002;</h5>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> keyA = {a: <span class="hljs-number">1</span>};
+<span class="hljs-keyword">const</span> keyB = {b: <span class="hljs-number">2</span>};
+
+<span class="hljs-keyword">const</span> myObject = {
+  [keyA]: <span class="hljs-string">&apos;valueA&apos;</span>,
+  [keyB]: <span class="hljs-string">&apos;valueB&apos;</span>
+};
+
+myObject <span class="hljs-comment">// Object {[object Object]: &quot;valueB&quot;}</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;[keyA]&#x548C;[keyB]&#x5F97;&#x5230;&#x7684;&#x90FD;&#x662F;[object Object]&#xFF0C;&#x6240;&#x4EE5;[keyB]&#x4F1A;&#x628A;[keyA]&#x8986;&#x76D6;&#x6389;&#xFF0C;&#x800C;myObject&#x6700;&#x540E;&#x53EA;&#x6709;&#x4E00;&#x4E2A;[object Object]&#x5C5E;&#x6027;&#x3002;</p>
+<h5 id="3-objectis">3. Object.is()</h5>
+<pre><code class="lang-js">+<span class="hljs-number">0</span> === <span class="hljs-number">-0</span> <span class="hljs-comment">//true</span>
+<span class="hljs-literal">NaN</span> === <span class="hljs-literal">NaN</span> <span class="hljs-comment">// false</span>
+
+<span class="hljs-built_in">Object</span>.is(+<span class="hljs-number">0</span>, <span class="hljs-number">-0</span>) <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">Object</span>.is(<span class="hljs-literal">NaN</span>, <span class="hljs-literal">NaN</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<h5 id="4-objectassign">4. Object.assign()</h5>
+<p>Object.assign&#x62F7;&#x8D1D;&#x7684;&#x5C5E;&#x6027;&#x662F;&#x6709;&#x9650;&#x5236;&#x7684;&#xFF0C;&#x53EA;&#x62F7;&#x8D1D;&#x6E90;&#x5BF9;&#x8C61;&#x7684;&#x81EA;&#x8EAB;&#x5C5E;&#x6027;&#xFF08;&#x4E0D;&#x62F7;&#x8D1D;&#x7EE7;&#x627F;&#x5C5E;&#x6027;&#xFF09;&#xFF0C;&#x4E5F;&#x4E0D;&#x62F7;&#x8D1D;&#x4E0D;&#x53EF;&#x679A;&#x4E3E;&#x7684;&#x5C5E;&#x6027;&#xFF08;enumerable: false&#xFF09;&#x3002; </p>
 <footer class="page-footer"><span class="footer-modification">&#x65F6;&#x95F4;&#xFF1A;
-2018-05-04 13:41:47
+2018-05-15 10:16:48
 </span></footer>
                                 
                                 </section>
@@ -472,6 +479,10 @@
             
                 
                 
+                <a href="promise.html" class="navigation navigation-next navigation-unique" aria-label="Next page: ES6 - Promise 对象">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
             
         
     </div>
@@ -479,7 +490,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"常用正则总结","level":"1.4.1","depth":2,"next":{"title":"Nginx","level":"1.5","depth":1,"ref":"","articles":[{"title":"在Nginx下配置使用单页面spa","level":"1.5.1","depth":2,"path":"nginx/spa.md","ref":"nginx/spa.md","articles":[]},{"title":"Nginx开启gzip","level":"1.5.2","depth":2,"path":"nginx/gzip.md","ref":"nginx/gzip.md","articles":[]}]},"previous":{"title":"Regex","level":"1.4","depth":1,"ref":"","articles":[{"title":"常用正则总结","level":"1.4.1","depth":2,"path":"regex/common.md","ref":"regex/common.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["favicon","tbfed-pagefooter@^0.0.1","livereload"],"styles":{"website":"public/css/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ismumu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ismumu's blog","links":{"sidebar":{"Ismumu's Home":"http://ismumu.com"}},"gitbook":"*","description":"ismumu's blog"},"file":{"path":"regex/common.md","mtime":"2018-05-04T05:41:47.079Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-15T01:44:29.574Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ES6 - 对象的扩展","level":"1.2.1","depth":2,"next":{"title":"ES6 - Promise 对象","level":"1.2.2","depth":2,"path":"javascript/promise.md","ref":"javascript/promise.md","articles":[]},"previous":{"title":"Javascript","level":"1.2","depth":1,"ref":"","articles":[{"title":"ES6 - 对象的扩展","level":"1.2.1","depth":2,"path":"javascript/object.md","ref":"javascript/object.md","articles":[]},{"title":"ES6 - Promise 对象","level":"1.2.2","depth":2,"path":"javascript/promise.md","ref":"javascript/promise.md","articles":[]},{"title":"node+multer上传图片","level":"1.2.3","depth":2,"path":"javascript/node-multer.md","ref":"javascript/node-multer.md","articles":[]},{"title":"echarts-graph","level":"1.2.4","depth":2,"path":"javascript/echarts-graph.md","ref":"javascript/echarts-graph.md","articles":[]},{"title":"new Date 不同时区的转换","level":"1.2.5","depth":2,"path":"javascript/different-time-zones.md","ref":"javascript/different-time-zones.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["favicon","tbfed-pagefooter@^0.0.1","livereload"],"styles":{"website":"public/css/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ismumu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ismumu's blog","links":{"sidebar":{"Ismumu's Home":"http://ismumu.com"}},"gitbook":"*","description":"ismumu's blog"},"file":{"path":"javascript/object.md","mtime":"2018-05-15T02:16:48.940Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-15T01:44:29.574Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

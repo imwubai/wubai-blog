@@ -2,7 +2,8 @@
 
 * [简介](README.md)
 * Javascript
-  * [Promise 对象](javascript/promise.md)
+  * [ES6 - 对象的扩展](javascript/object.md)
+  * [ES6 - Promise 对象](javascript/promise.md)
   * [node+multer上传图片](javascript/node-multer.md)
   * [echarts-graph](javascript/echarts-graph.md)
   * [new Date 不同时区的转换](javascript/different-time-zones.md)
