@@ -14,9 +14,7 @@
         "favicon",
         "tbfed-pagefooter@^0.0.1",
         "github",
-        "disqus",
-        "copy-code-button",
-        "3-ba"
+        "copy-code-button"
     ],
     "pluginsConfig": {
         "3-ba": {
