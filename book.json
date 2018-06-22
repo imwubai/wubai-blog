@@ -12,9 +12,17 @@
     },
     "plugins": [
         "favicon",
-        "tbfed-pagefooter@^0.0.1"
+        "tbfed-pagefooter@^0.0.1",
+        "github",
+        "disqus"
     ],
     "pluginsConfig": {
+        "disqus": {
+            "shortName": "ismumu"
+        },
+        "github": {
+            "url": "https://github.com/ismumu"
+        },
         "sharing": {
             "twitter": false,
             "facebook": false,
