@@ -14,9 +14,14 @@
         "favicon",
         "tbfed-pagefooter@^0.0.1",
         "github",
-        "disqus"
+        "disqus",
+        "copy-code-button",
+        "3-ba"
     ],
     "pluginsConfig": {
+        "3-ba": {
+            "token": "0dc21ada50adb33d80985e3e0de94a25"
+        },
         "disqus": {
             "shortName": "ismumu"
         },
@@ -33,6 +38,7 @@
             "bookmark": "favicon.ico"
         },
         "tbfed-pagefooter": {
+            "copyright":"Copyright &copy ismumu.com 2018",
             "modify_label": "时间：",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         }
