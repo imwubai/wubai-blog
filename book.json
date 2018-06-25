@@ -32,8 +32,8 @@
             "all": []
         },
         "favicon": {
-            "shortcut": "favicon.ico",
-            "bookmark": "favicon.ico"
+            "shortcut": "/favicon.ico",
+            "bookmark": "/favicon.ico"
         },
         "tbfed-pagefooter": {
             "copyright":"Copyright &copy ismumu.com 2018",
