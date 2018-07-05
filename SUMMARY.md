@@ -1,6 +1,8 @@
 # Summary
 
 * [简介](README.md)
+* Dva
+  * [路由切换重置model的state](dva/model-reset-state.md)
 * Javascript
   * [ES6 - 对象的扩展](javascript/object.md)
   * [ES6 - Promise 对象](javascript/promise.md)
