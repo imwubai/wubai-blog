@@ -27,4 +27,51 @@
 // 1-15位的纯数字
 /^\d{1,15}$/,
 
+// 替换空格
+'aa&nbsp;aa'.replace(/&nbsp;/g, ' ');
+
+// 替换某某开始某某结尾
+'<span width="100">1231231</span>'.replace(/\<span.*?\>/g, '');
+
+```
+
+
+#### 替换话题
+
+```js
+function stringToTopic (contentString) {
+    // 转换下空格
+    contentString = contentString.replace(/&nbsp;/g, ' ');
+    let resultArr = [];
+
+	let topicHtml = '<a href="javascript:;" class="J-topic" to="/topic?text=$1">#$1 </a>';
+
+
+    // 判断是不是以前的老数据(textarea填写提交的)
+    if ( contentString.includes('</p>') ) {
+        let contentArr = contentString.split('</p>');
+        contentArr.map((pString) => {
+
+            // 把span标签剔除
+            pString = pString.replace(/\<span.*?\>/g, '');
+            pString = pString.replace(/\<\/span.*?\>/g, '');
+
+            if ( pString.endsWith('#') ) {
+                pString += '</p>';
+                pString = pString.replace(/(?:#([^#\s]+)\s)/g, topicHtml);
+            } else {
+                pString += ' </p>';
+                pString = pString.replace(/(?:#([^#\s]+)\s)/g, topicHtml);
+            }
+
+            resultArr.push(pString);
+
+        })
+    } else {
+        resultArr.push(contentString.replace(/(?:#([^#\s]+)\s)/g, topicHtml));
+    }
+
+    return resultArr.join('');
+}
+
 ```

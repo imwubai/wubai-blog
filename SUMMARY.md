@@ -4,6 +4,8 @@
 * Dva
   * [路由切换重置model的state](dva/model-reset-state.md)
 * Javascript
+  * [ES6 Class 的继承](javascript/es6-class-extends.md)
+  * [继承](javascript/inheritance.md)
   * [ES6 - 对象的扩展](javascript/object.md)
   * [ES6 - Promise 对象](javascript/promise.md)
   * [node+multer上传图片](javascript/node-multer.md)
