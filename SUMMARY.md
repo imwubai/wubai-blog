@@ -1,6 +1,9 @@
 # Summary
 
 * [简介](README.md)
+* 设计模式
+  * [单例模式](design/singleton.md)
+  * [策略模式](design/strategy.md)
 * Dva
   * [路由切换重置model的state](dva/model-reset-state.md)
 * Javascript
