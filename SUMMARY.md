@@ -4,6 +4,7 @@
 * Dva
   * [路由切换重置model的state](dva/model-reset-state.md)
 * Javascript
+  * [详解i++ 和 ++i](javascript/i.md)
   * [ES6 Class 的继承](javascript/es6-class-extends.md)
   * [继承](javascript/inheritance.md)
   * [ES6 - 对象的扩展](javascript/object.md)
