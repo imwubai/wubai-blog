@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>路由切换重置model的state · ismumu's blog</title>
+        <title>代理模式 · ismumu's blog</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -54,6 +54,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="each.html" />
+    
+    
+    <link rel="prev" href="strategy.html" />
     
 
     
@@ -127,9 +131,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../design/singleton.html">
+        <li class="chapter " data-level="1.2.1" data-path="singleton.html">
             
-                <a href="../design/singleton.html">
+                <a href="singleton.html">
             
                     
                     单例模式
@@ -140,9 +144,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="../design/strategy.html">
+        <li class="chapter " data-level="1.2.2" data-path="strategy.html">
             
-                <a href="../design/strategy.html">
+                <a href="strategy.html">
             
                     
                     策略模式
@@ -153,9 +157,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="../design/proxy.html">
+        <li class="chapter active" data-level="1.2.3" data-path="proxy.html">
             
-                <a href="../design/proxy.html">
+                <a href="proxy.html">
             
                     
                     代理模式
@@ -166,9 +170,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="../design/each.html">
+        <li class="chapter " data-level="1.2.4" data-path="each.html">
             
-                <a href="../design/each.html">
+                <a href="each.html">
             
                     
                     迭代器模式
@@ -198,9 +202,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="model-reset-state.html">
+        <li class="chapter " data-level="1.3.1" data-path="../dva/model-reset-state.html">
             
-                <a href="model-reset-state.html">
+                <a href="../dva/model-reset-state.html">
             
                     
                     路由切换重置model的state
@@ -542,7 +546,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >路由切换重置model的state</a>
+        <a href=".." >代理模式</a>
     </h1>
 </div>
 
@@ -557,49 +561,63 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="dva-&#x8DEF;&#x7531;&#x5207;&#x6362;&#x91CD;&#x7F6E;model&#x7684;state">Dva &#x8DEF;&#x7531;&#x5207;&#x6362;&#x91CD;&#x7F6E;model&#x7684;state</h1>
-<p>&#x597D;&#x591A;&#x4E1A;&#x52A1;&#x573A;&#x666F;&#x9700;&#x8981;&#x7528;&#x5230;&#x5F53;&#x9875;&#x9762;A&#x79BB;&#x5F00;&#x518D;&#x56DE;&#x6765;&#x65F6;&#x5019;&#x9700;&#x8981;&#x6E05;&#x7A7A;A&#x9875;&#x9762;&#x7684;&#x72B6;&#x6001;&#x6570;&#x636E;&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x6817;&#x5B50;</p>
-<pre><code class="lang-js">
-<span class="hljs-comment">// &#x5728;model.js&#x4E2D;&#x4FEE;&#x6539;</span>
-
-<span class="hljs-keyword">const</span> initalState = {
-    a: <span class="hljs-number">1</span>,
-    b: <span class="hljs-number">2</span>,
-}
-
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
-    namespace: <span class="hljs-string">&apos;myNameSpace&apos;</span>,
-    state: {
-        ...initalState
-    },
-    subscriptions: {
-        setup({ dispatch, history }) {
-            history.listen((location) =&gt; {
-                <span class="hljs-comment">/**
-                 * &#x76D1;&#x542C;&#x8DEF;&#x7531;&#x53D8;&#x5316;
-                 */</span>
-                <span class="hljs-keyword">if</span> (location.pathname == <span class="hljs-string">&quot;/xxxxxx&quot;</span>) {
-                    <span class="hljs-comment">// &#x91CD;&#x7F6E;&#x5F53;&#x524D;&#x9875;&#x9762;state</span>
-                    dispatch({
-                        type: <span class="hljs-string">&apos;initalState&apos;</span>
-                    });
-                }
-            });
-        }
-    },
-    effects: {},
-    reducers: {
-        initalState(state, action){
-            <span class="hljs-keyword">return</span> {
-                ...initalState,
-            };
-        },
+                                <h1 id="javascript&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;---&#x4EE3;&#x7406;&#x6A21;&#x5F0F;">Javascript&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F; - &#x4EE3;&#x7406;&#x6A21;&#x5F0F;</h1>
+<h5 id="&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x662F;&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x4EE3;&#x7528;&#x54C1;&#x6216;&#x5360;&#x4F4D;&#x7B26;&#xFF0C;&#x4EE5;&#x4FBF;&#x63A7;&#x5236;&#x5BF9;&#x5B83;&#x7684;&#x8BBF;&#x95EE;">&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x662F;&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x4EE3;&#x7528;&#x54C1;&#x6216;&#x5360;&#x4F4D;&#x7B26;&#xFF0C;&#x4EE5;&#x4FBF;&#x63A7;&#x5236;&#x5BF9;&#x5B83;&#x7684;&#x8BBF;&#x95EE;</h5>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x6539;&#x53D8;&#x6545;&#x4E8B;&#x7684;&#x80CC;&#x666F;&#x8BBE;&#x5B9A;&#xFF0C;&#x5047;&#x8BBE;&#x5F53; A &#x5728;&#x5FC3;&#x60C5;&#x597D;&#x7684;&#x65F6;&#x5019;&#x6536;&#x5230;&#x82B1;&#xFF0C;&#x5C0F;&#x660E;&#x8868;&#x767D;&#x6210;&#x529F;&#x7684;&#x51E0;&#x7387;&#x6709; 60%&#xFF0C;&#x800C;&#x5F53; A &#x5728;&#x5FC3;&#x60C5;&#x5DEE;&#x7684;&#x65F6;&#x5019;&#x6536;&#x5230;&#x82B1;&#xFF0C;&#x5C0F;&#x660E;&#x8868;&#x767D;&#x7684;&#x6210;&#x529F;&#x7387;&#x65E0;&#x9650;&#x8D8B;&#x8FD1;&#x4E8E; 0&#x3002;</p>
+<p>&#x5C0F;&#x660E;&#x8DDF; A &#x521A;&#x521A;&#x8BA4;&#x8BC6;&#x4E24;&#x5929;&#xFF0C;&#x8FD8;&#x65E0;&#x6CD5;&#x8FA8;&#x522B; A &#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x5FC3;&#x60C5;&#x597D;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x5408;&#x65F6;&#x5B9C;&#x5730;&#x628A;&#x82B1;&#x9001;&#x7ED9; A&#xFF0C;&#x82B1; &#x88AB;&#x76F4;&#x63A5;&#x6254;&#x6389;&#x7684;&#x53EF;&#x80FD;&#x6027;&#x5F88;&#x5927;&#xFF0C;&#x8FD9;&#x675F;&#x82B1;&#x53EF;&#x662F;&#x5C0F;&#x660E;&#x5403;&#x4E86; 7 &#x5929;&#x6CE1;&#x9762;&#x6362;&#x6765;&#x7684;&#x3002;</p>
+<p>&#x4F46;&#x662F; A &#x7684;&#x670B;&#x53CB; B &#x5374;&#x5F88;&#x4E86;&#x89E3; A&#xFF0C;&#x6240;&#x4EE5;&#x5C0F;&#x660E;&#x53EA;&#x7BA1;&#x628A;&#x82B1;&#x4EA4;&#x7ED9; B&#xFF0C;B &#x4F1A;&#x76D1;&#x542C; A &#x7684;&#x5FC3;&#x60C5;&#x53D8;&#x5316;&#xFF0C;&#x7136;&#x540E;&#x9009; &#x62E9; A &#x5FC3;&#x60C5;&#x597D;&#x7684;&#x65F6;&#x5019;&#x628A;&#x82B1;&#x8F6C;&#x4EA4;&#x7ED9; A&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> Flower = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ };
+<span class="hljs-keyword">var</span> xiaoming = {
+    sendFlower: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">target</span>) </span>{
+        <span class="hljs-keyword">var</span> flower = <span class="hljs-keyword">new</span> Flower();
+        target.receiveFlower(flower);
     }
 };
+<span class="hljs-keyword">var</span> B = {
+    receiveFlower: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">flower</span>) </span>{
+        A.listenGoodMood(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            A.receiveFlower(flower);
+        });
+    }
+};
+<span class="hljs-keyword">var</span> A = {
+    receiveFlower: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">flower</span>) </span>{
+        <span class="hljs-comment">// &#x76D1;&#x542C; A &#x7684;&#x597D;&#x5FC3;&#x60C5;</span>
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x6536;&#x5230;&#x82B1; &apos;</span> + flower);
+    },
+    listenGoodMood: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">fn</span>) </span>{
+        setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-comment">// &#x5047;&#x8BBE; 10 &#x79D2;&#x4E4B;&#x540E; A &#x7684;&#x5FC3;&#x60C5;&#x53D8;&#x597D;</span>
+            fn();
+        }, <span class="hljs-number">10000</span>);
+    }
+};
+xiaoming.sendFlower(B);
+</code></pre>
+<h5 id="&#x865A;&#x62DF;&#x4EE3;&#x7406;&#x5B9E;&#x73B0;&#x56FE;&#x7247;&#x9884;&#x52A0;&#x8F7D;">&#x865A;&#x62DF;&#x4EE3;&#x7406;&#x5B9E;&#x73B0;&#x56FE;&#x7247;&#x9884;&#x52A0;&#x8F7D;</h5>
+<p>&#x73B0;&#x5728;&#x5F00;&#x59CB;&#x5F15;&#x5165;&#x4EE3;&#x7406;&#x5BF9;&#x8C61; proxyImage&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x56FE;&#x7247;&#x88AB;&#x771F;&#x6B63;&#x52A0;&#x8F7D;&#x597D;&#x4E4B;&#x524D;&#xFF0C;&#x9875;&#x9762;&#x4E2D;&#x5C06;&#x51FA;&#x73B0;&#x4E00;&#x5F20;&#x5360;&#x4F4D;&#x7684;&#x83CA;&#x82B1;&#x56FE; loading.gif, &#x6765;&#x63D0;&#x793A;&#x7528;&#x6237;&#x56FE;&#x7247;&#x6B63;&#x5728;&#x52A0;&#x8F7D;&#x3002;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> myImage = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> imgNode = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;img&apos;</span>); <span class="hljs-built_in">document</span>.body.appendChild(imgNode);
+    <span class="hljs-keyword">return</span> {
+        setSrc: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">src</span>) </span>{
+            imgNode.src = src;
+        }
+    }
+})();
+<span class="hljs-keyword">var</span> proxyImage = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> img = <span class="hljs-keyword">new</span> Image; img.onload = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        myImage.setSrc(<span class="hljs-keyword">this</span>.src);
+    }
+    <span class="hljs-keyword">return</span> {
+        setSrc: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">src</span>) </span>{
+            myImage.setSrc(<span class="hljs-string">&apos;../Desktop/loading.gif&apos;</span>);
+            img.src = src;
+        }
+    }
+})();
+proxyImage.setSrc(<span class="hljs-string">&apos;https://img.alicdn.com/tfs/TB1MaoKpIUrBKNjSZPxXXX00pXa-204-80.png&apos;</span>);
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; ismumu.com 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x65F6;&#x95F4;&#xFF1A;
-2018-07-05 10:09:01
+2018-08-22 10:51:42
 </span></footer>
                                 
                                 </section>
@@ -627,6 +645,14 @@
 
             
                 
+                <a href="strategy.html" class="navigation navigation-prev " aria-label="Previous page: 策略模式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="each.html" class="navigation navigation-next " aria-label="Next page: 迭代器模式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -635,7 +661,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"路由切换重置model的state","level":"1.3.1","depth":2,"next":{"title":"Javascript","level":"1.4","depth":1,"ref":"","articles":[{"title":"详解i++ 和 ++i","level":"1.4.1","depth":2,"path":"javascript/i.md","ref":"javascript/i.md","articles":[]},{"title":"ES6 Class 的继承","level":"1.4.2","depth":2,"path":"javascript/es6-class-extends.md","ref":"javascript/es6-class-extends.md","articles":[]},{"title":"继承","level":"1.4.3","depth":2,"path":"javascript/inheritance.md","ref":"javascript/inheritance.md","articles":[]},{"title":"ES6 - 对象的扩展","level":"1.4.4","depth":2,"path":"javascript/object.md","ref":"javascript/object.md","articles":[]},{"title":"ES6 - Promise 对象","level":"1.4.5","depth":2,"path":"javascript/promise.md","ref":"javascript/promise.md","articles":[]},{"title":"node+multer上传图片","level":"1.4.6","depth":2,"path":"javascript/node-multer.md","ref":"javascript/node-multer.md","articles":[]},{"title":"echarts-graph","level":"1.4.7","depth":2,"path":"javascript/echarts-graph.md","ref":"javascript/echarts-graph.md","articles":[]},{"title":"new Date 不同时区的转换","level":"1.4.8","depth":2,"path":"javascript/different-time-zones.md","ref":"javascript/different-time-zones.md","articles":[]}]},"previous":{"title":"Dva","level":"1.3","depth":1,"ref":"","articles":[{"title":"路由切换重置model的state","level":"1.3.1","depth":2,"path":"dva/model-reset-state.md","ref":"dva/model-reset-state.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["favicon","tbfed-pagefooter@^0.0.1","github","copy-code-button","livereload"],"styles":{"website":"public/css/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ismumu.com 2018","modify_label":"时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"shortName":"ismumu"},"github":{"url":"https://github.com/ismumu"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/favicon.ico","bookmark":"/favicon.ico"},"3-ba":{"token":"0dc21ada50adb33d80985e3e0de94a25"},"copy-code-button":{},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ismumu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ismumu's blog","links":{"sidebar":{"Ismumu's Home":"http://ismumu.com"}},"gitbook":"*","description":"ismumu's blog"},"file":{"path":"dva/model-reset-state.md","mtime":"2018-07-05T02:09:01.121Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-22T02:24:30.341Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"代理模式","level":"1.2.3","depth":2,"next":{"title":"迭代器模式","level":"1.2.4","depth":2,"path":"design/each.md","ref":"design/each.md","articles":[]},"previous":{"title":"策略模式","level":"1.2.2","depth":2,"path":"design/strategy.md","ref":"design/strategy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["favicon","tbfed-pagefooter@^0.0.1","github","copy-code-button","livereload"],"styles":{"website":"public/css/common.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy ismumu.com 2018","modify_label":"时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"shortName":"ismumu"},"github":{"url":"https://github.com/ismumu"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/favicon.ico","bookmark":"/favicon.ico"},"3-ba":{"token":"0dc21ada50adb33d80985e3e0de94a25"},"copy-code-button":{},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"ismumu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ismumu's blog","links":{"sidebar":{"Ismumu's Home":"http://ismumu.com"}},"gitbook":"*","description":"ismumu's blog"},"file":{"path":"design/proxy.md","mtime":"2018-08-22T02:51:42.867Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-22T02:24:30.341Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

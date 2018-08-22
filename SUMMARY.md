@@ -4,6 +4,8 @@
 * 设计模式
   * [单例模式](design/singleton.md)
   * [策略模式](design/strategy.md)
+  * [代理模式](design/proxy.md)
+  * [迭代器模式](design/each.md)
 * Dva
   * [路由切换重置model的state](dva/model-reset-state.md)
 * Javascript
