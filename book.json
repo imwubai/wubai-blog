@@ -13,8 +13,7 @@
     "plugins": [
         "favicon",
         "tbfed-pagefooter@^0.0.1",
-        "github",
-        "copy-code-button"
+        "github"
     ],
     "pluginsConfig": {
         "3-ba": {

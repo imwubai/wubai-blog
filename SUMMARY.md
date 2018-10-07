@@ -6,8 +6,7 @@
   * [策略模式](design/strategy.md)
   * [代理模式](design/proxy.md)
   * [迭代器模式](design/each.md)
-* Dva
-  * [路由切换重置model的state](dva/model-reset-state.md)
+  * [观察者模式](design/publisher.md)
 * Javascript
   * [详解i++ 和 ++i](javascript/i.md)
   * [ES6 Class 的继承](javascript/es6-class-extends.md)
