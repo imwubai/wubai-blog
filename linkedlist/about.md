@@ -24,17 +24,17 @@
 ##### 头插入
 
 头插入实际上是增加一个新节点，然后把新增加的结点指针指向原来头指针指向的元素，再把头指针指向新增的节点。
-<a href="/public/images/1.png" target="_blank"><img style="width: 100%;" src="/public/images/2.png"></a>
+<img style="width: 100%;" src="/public/images/2.png">
 
 ##### 尾插入
 
 尾插入也是增加一个新节点，该节点指针置为null，然后把原尾结点指针指向新增加的节点，最后把尾指针指向新增加的节点即可。
-<a href="/public/images/1.png" target="_blank"><img style="width: 100%;" src="/public/images/3.png"></a>
+<img style="width: 100%;" src="/public/images/3.png">
 
 ##### 中间插入
 
 中间插入稍复杂，首先增加一个节点，然后新增节点的指针指向插入位置的后一个节点，把插入位置的前一个节点指针指向新插入节点即可。
-<a href="/public/images/1.png" target="_blank"><img style="width: 100%;" src="/public/images/4.png"></a>
+<img style="width: 100%;" src="/public/images/4.png">
 
 #### 四、删除操作
 
@@ -43,14 +43,14 @@
 ##### 头删除
 
 删除头元素时，先将头指针指向下一个节点，然后把原头结点的指针置空即可
-<a href="/public/images/1.png" target="_blank"><img style="width: 100%;" src="/public/images/5.png"></a>
+<img style="width: 100%;" src="/public/images/5.png">
 
 ##### 尾删除
 
 删除尾元素时，首先找到链表倒数第2个元素，然后把尾指针指向这个元素，接着把原倒数第2个元素的指针置空。
-<a href="/public/images/1.png" target="_blank"><img style="width: 100%;" src="/public/images/6.png"></a>
+<img style="width: 100%;" src="/public/images/6.png">
 
 ##### 中间删除
 
 删除中间元素相对复杂一些，首先将要删除的节点的前一个节点指针指向要删除的节点的下一个节点，然后把要删除节点的指针置空。
-<a href="/public/images/1.png" target="_blank"><img style="width: 100%;" src="/public/images/7.png"></a>
+<img style="width: 100%;" src="/public/images/7.png">
