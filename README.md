@@ -1,6 +1,4 @@
-# My blog
-
-### 日常收集整理
+# ismumu's blog
 
 * 链表
   * [介绍](linkedlist/about.md)
