@@ -1,11 +1,9 @@
-# My blog
-
-### 日常收集整理
+# ismumu's blog
 
 * 链表
   * [介绍](linkedlist/about.md)
-  * [单向链表构造函数](linkedlist/singly.md)
-  
+  * [单向链表构造函数](linkedlist/SinglyLinkedList.js)
+  * [双向链表的构造函数](linkedlist/DoublyLinkedList.js)
 * 设计模式
   * [单例模式](design/singleton.md)
   * [策略模式](design/strategy.md)

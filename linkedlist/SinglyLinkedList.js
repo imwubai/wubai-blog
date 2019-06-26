@@ -1,6 +1,3 @@
-# 单向链表构造函数
-
-```js
 class Node {
     constructor(element) {
         this.element = element;
@@ -10,7 +7,7 @@ class Node {
 
 class SinglyLinkedList {
 
-    constructor () {
+    constructor() {
         // 单向链表的长度
         this.length = 0;
         // 单向链表的头结点，初始化为null
@@ -18,7 +15,7 @@ class SinglyLinkedList {
     }
 
     // 向单向链表尾部添加元素
-    append (element) {
+    append(element) {
         let node = new Node(element);
         let current;
 
@@ -36,7 +33,7 @@ class SinglyLinkedList {
 
     // 要移除元素的位置
     // 移除成功返回被移除的元素，不成功则返回NULL
-    removeAt (position) {
+    removeAt(position) {
         if (position > -1 && position < this.length) {
             let current = this.head;
             let previous;
@@ -45,10 +42,11 @@ class SinglyLinkedList {
             if (position == 0) {
                 this.head = current.next;
             } else {
-                while ((index++) < position) {
+                while (index++ < position) {
                     previous = current;
                     current = current.next;
                 }
+
                 previous.next = current.next;
             }
 
@@ -66,7 +64,7 @@ class SinglyLinkedList {
 
         position = parseInt(position);
 
-        if( Number.isNaN(position) ){
+        if (Number.isNaN(position)) {
             return false;
         }
 
@@ -80,7 +78,7 @@ class SinglyLinkedList {
                 node.next = current;
                 this.head = node;
             } else {
-                while ((index++) < position) {
+                while (index++ < position) {
                     previous = current;
                     current = current.next;
                 }
@@ -97,7 +95,7 @@ class SinglyLinkedList {
     }
 
     // 将链表所有内容以字符串输出
-    toString () {
+    toString() {
         let current = this.head;
         let string = '';
 
@@ -109,7 +107,7 @@ class SinglyLinkedList {
     }
 
     // 要寻找的元素,返回值>=0则代表找到相应位置
-    indexOf (element) {
+    indexOf(element) {
         let current = this.head;
         let index = 0;
 
@@ -125,13 +123,13 @@ class SinglyLinkedList {
     }
 
     // 要移除的元素,返回值>=0表示移除成功
-    remove (element) {
+    remove(element) {
         let index = this.indexOf(element);
         return this.removeAt(index);
     }
 
     // 判断单向链表是否为空
-    isAmpty () {
+    isAmpty() {
         return this.length === 0
     }
 
@@ -160,4 +158,3 @@ console.log(a);
 console.log(a.toString());
 console.log(a.size());
 console.log(a.getHead());
-```
