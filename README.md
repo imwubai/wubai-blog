@@ -11,6 +11,7 @@
   * [迭代器模式](design/each.md)
   * [观察者模式](design/publisher.md)
 * Javascript
+  * [堆的构成](javascript/heap.md)
   * [详解i++ 和 ++i](javascript/i.md)
   * [ES6 Class 的继承](javascript/es6-class-extends.md)
   * [继承](javascript/inheritance.md)
@@ -30,5 +31,3 @@
   * [常见问题汇总](linux/common.md)
 * MySQL
   * [MySql查看当前端口号](mysql/check-port.md)
-
-
