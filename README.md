@@ -2,8 +2,8 @@
 
 * 链表
   * [介绍](linkedlist/about.md)
-  * [单向链表构造函数](linkedlist/SinglyLinkedList.js)
-  * [双向链表的构造函数](linkedlist/DoublyLinkedList.js)
+  * [单向链表构造函数](linkedlist/SinglyLinkedList.md)
+  * [双向链表的构造函数](linkedlist/DoublyLinkedList.md)
 * 设计模式
   * [单例模式](design/singleton.md)
   * [策略模式](design/strategy.md)

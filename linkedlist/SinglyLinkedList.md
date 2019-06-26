@@ -1,3 +1,4 @@
+```js
 class Node {
     constructor(element) {
         this.element = element;
@@ -158,3 +159,4 @@ console.log(a);
 console.log(a.toString());
 console.log(a.size());
 console.log(a.getHead());
+```js
