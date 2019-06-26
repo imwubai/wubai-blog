@@ -1,3 +1,5 @@
+# 双向链表例子
+
 ```js
 class Node {
     constructor(element) {
@@ -138,4 +140,4 @@ b.append(2)
 console.log(b);
 console.log(b.showHead());
 console.log(b.showLength());
-```js
+```
