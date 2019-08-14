@@ -3,6 +3,7 @@
 
 * 微信
   * [授权登录流程](wx/login.md)
+  * [前端解密数据](wx/decryptCode.md)
 * 链表
   * [介绍](linkedlist/about.md)
   * [单向链表构造函数](linkedlist/SinglyLinkedList.md)
