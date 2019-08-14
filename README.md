@@ -1,5 +1,8 @@
 # ismumu's blog
 
+
+* 微信
+  * [授权登录流程](wx/login.md)
 * 链表
   * [介绍](linkedlist/about.md)
   * [单向链表构造函数](linkedlist/SinglyLinkedList.md)
