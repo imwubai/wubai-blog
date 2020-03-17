@@ -1,4 +1,4 @@
-# ismumu's blog
+# wubai's blog
 
 
 * 微信
@@ -15,6 +15,7 @@
   * [迭代器模式](design/each.md)
   * [观察者模式](design/publisher.md)
 * Javascript
+  * [GitFlow工作流程图](javascript/gc.md)
   * [垃圾回收机制](javascript/gc.md)
   * [堆的构成](javascript/heap.md)
   * [详解i++ 和 ++i](javascript/i.md)
